@@ -1,0 +1,475 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="baidu_union_verify" content="d1952c66cf48912e21c18c7c581f382a">
+  <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
+<meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
+  
+    <title>Hdoj 5606 Tree（并查集） | FancyBian</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="Bian Shuqing">
+    
+    <meta name="description" content="基础的并查集问题HDOJ—5606 
+题意描述
+给出一棵树，n个点，每条边的权值只有0和1，求每一个点离它最近的点的个数（包括自身）。
+一些思路
+起初以为只要找每一个点相邻它的权值为0的点，忽视了一个很特别的情况，比如0的节点有一个权值为0的边连着节点1，节点1有一个权值为0的边连着节点2，那么节点">
+    
+    
+    
+    
+    <link rel="alternate" href="atom.xml" title="FancyBian" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            var _bdId ='391982416296a0d54221f59fe35250d4';
+             hm.src = "//hm.baidu.com/hm.js?" + _bdId;
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+     
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/source/img/logo.svg" alt="FancyBian" title="FancyBian"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="FancyBian">FancyBian</a></h1>
+				<a class="blog-motto">Keep trying , keep going !</a>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+					<li>
+					
+                                            <form class="search" action=http://zhannei.baidu.com/cse/search target="_blank">
+                                            <label>Search</label>
+                                        <input name="s" type="hidden" value= null ><input type="text" name="q" size="30" placeholder="搜索"><br>
+					
+					</li>
+				</ul>
+                            </nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/01/22/Hdoj-5606-Tree（并查集）/" title="Hdoj 5606 Tree（并查集）" itemprop="url">Hdoj 5606 Tree（并查集）</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="Bian Shuqing">Bian Shuqing</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-01-22T13:05:56.000Z" itemprop="datePublished">2016-01-22</time>
+    更新日期:<time datetime="2016-01-23T07:14:37.000Z" itemprop="dateModified">2016-01-23</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目錄</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础的并查集问题"><span class="toc-number">1.</span> <span class="toc-text">基础的并查集问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题意描述"><span class="toc-number">1.1.</span> <span class="toc-text">题意描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一些思路"><span class="toc-number">1.2.</span> <span class="toc-text">一些思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于并查集"><span class="toc-number">1.3.</span> <span class="toc-text">关于并查集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#寻找所有同一集合的大Boss"><span class="toc-number">1.3.1.</span> <span class="toc-text">寻找所有同一集合的大Boss</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#合并"><span class="toc-number">1.3.2.</span> <span class="toc-text">合并</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本题的思路"><span class="toc-number">1.4.</span> <span class="toc-text">本题的思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.5.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+		</div>
+		
+		<p><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer"></script></p>
+<h2 id="基础的并查集问题">基础的并查集问题</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5606" target="_blank" rel="external"><strong>HDOJ—5606</strong></a> </p>
+<h3 id="题意描述">题意描述</h3><hr>
+<p>给出一棵树，n个点，每条边的权值只有0和1，求每一个点离它最近的点的个数（包括自身）。</p>
+<h3 id="一些思路">一些思路</h3><hr>
+<p>起初以为只要找每一个点相邻它的权值为0的点，忽视了一个很特别的情况，比如0的节点有一个权值为0的边连着节点1，节点1有一个权值为0的边连着节点2，那么节点1的相邻最近的点总共3个（包括自身），然而如果按照自己刚才的思路就错了。那么此题很明显看出来要用到<strong>并查集</strong>。</p>
+<h3 id="关于并查集">关于并查集</h3><hr>
+<p>给出关键的两步:</p>
+<h4 id="寻找所有同一集合的大Boss">寻找所有同一集合的大Boss</h4><pre class="prettyprint">
+<code class="language-cpp">
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findV</span><span class="params">(<span class="keyword">int</span> v)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(f[v] == v)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> v;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		f[v] = findV(v);</span><br><span class="line">		<span class="keyword">return</span> f[v];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</code>
+</pre>
+
+<h4 id="合并">合并</h4><pre class="prettyprint">
+<code class="language-cpp">
+
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x1 = findV(x);<span class="comment">//追根溯源找到最终的大boss</span></span><br><span class="line">	<span class="keyword">int</span> y1 = findV(y);</span><br><span class="line">	<span class="keyword">if</span>(x1!=y1)<span class="comment">//如果两个的领导不同，说明之前他们分属两个不同的集团</span></span><br><span class="line">	&#123;</span><br><span class="line">		f[y] = x1;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</code>
+</pre>
+
+<h3 id="本题的思路">本题的思路</h3><hr>
+<p>初始时，每一个点各自属于一个集团，一旦这两个点的边权值为0，则这两个点属于同一个集团，利用靠左原则将点合并，另外此题里要<strong>统计每一个集团的个数</strong>（即每一个点相邻最近的点的个数），在合并的时候完成个数的统计，方法是在构造一个数组，每一个数组元素初始化的值即为1（自身），一旦两个点要合并时，将右边的boss的总和加到左边boss的个数上。后面的计算就比较简单了。</p>
+<h3 id="代码">代码</h3><hr>
+<pre class="prettyprint">
+<code class="language-cpp">
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXN <span class="number">100005</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> vers[MAXN];</span><br><span class="line"><span class="keyword">int</span> sum[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get_v</span><span class="params">(<span class="keyword">int</span> m)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(vers[m]!=m)</span><br><span class="line">	vers[m]=get_v(m);</span><br><span class="line">	<span class="keyword">return</span> vers[m];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_v</span><span class="params">(<span class="keyword">int</span> v,<span class="keyword">int</span> u)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> v1 = get_v(v);</span><br><span class="line">	<span class="keyword">int</span> v2 = get_v(u);</span><br><span class="line">	<span class="keyword">if</span>(v1!=v2)&#123;</span><br><span class="line">	vers[u] = v1;</span><br><span class="line">	sum[v1] = sum[v1] + sum[v2];<span class="comment">//统计每个联通块个数</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; MAXN ; i++)&#123;</span><br><span class="line">	vers[i] = i;</span><br><span class="line">	sum[i] = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t,n,i,j,u,v,w,s;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		init();</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">		<span class="keyword">for</span>(i = <span class="number">1</span>;i&lt;=n-<span class="number">1</span>;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;u,&amp;v,&amp;w);</span><br><span class="line">			<span class="keyword">if</span>(w==<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">			merge_v(u,v);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		s=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(i = <span class="number">1</span> ; i&lt;= n ;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			s=s^sum[get_v(i)];</span><br><span class="line">		&#125;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,s);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</code>
+</pre>
+
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/并查集/">并查集</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/acm/">acm</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/01/22/Hdoj-5606-Tree（并查集）/" data-title="Hdoj 5606 Tree（并查集） | FancyBian" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/01/07/hello-world/"  title="Hello World">
+ <strong>NEXT:</strong><br/> 
+ <span>Hello World
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	
+	<div class="ds-thread" data-title="Hdoj 5606 Tree（并查集）" data-thread-key="Hdoj-5606-Tree（并查集）" data-author-key="Bian Shuqing" data-url="http://yoursite.com/post/Hdoj-5606-Tree（并查集）"></div>
+	
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目錄</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础的并查集问题"><span class="toc-number">1.</span> <span class="toc-text">基础的并查集问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题意描述"><span class="toc-number">1.1.</span> <span class="toc-text">题意描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一些思路"><span class="toc-number">1.2.</span> <span class="toc-text">一些思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于并查集"><span class="toc-number">1.3.</span> <span class="toc-text">关于并查集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#寻找所有同一集合的大Boss"><span class="toc-number">1.3.1.</span> <span class="toc-text">寻找所有同一集合的大Boss</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#合并"><span class="toc-number">1.3.2.</span> <span class="toc-text">合并</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本题的思路"><span class="toc-number">1.4.</span> <span class="toc-text">本题的思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.5.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<aside class="clearfix">
+<div id="authorInfo">
+	
+		<div class="author-logo"></div>		
+	
+	<div class="social-list" class="clearfix">
+		
+		
+		
+		
+		
+	</div>
+</div>
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分類</p>
+		<ul>
+		
+			<li><a href="/categories/acm/" title="acm">acm<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">標簽</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/并查集/" title="并查集">并查集<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情鏈接</p>
+    <ul>
+      <li><a href="http://hexo.io" target="_blank" title="Hexo">Hexo</a></li>
+      <li><a href="http://gengbiao.me" target="_blank" title="coney">coney's Blog</a></li>
+    </ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+</div>
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">標簽雲</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/并查集/" style="font-size: 10px;">并查集</a>
+    </div>
+  </div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+    
+            <p class="copyright"> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="Bian Shuqing">Bian Shuqing</a>
+		
+            && Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> && Theme by <a href="http://gengbiao.me" target="_blank" title="coney">coney</a>
+            </div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+<script>
+    
+        var _bdImg = '4';
+    
+    window._bd_share_config={
+        "common":{
+            "bdSnsKey":{
+
+            },
+            "bdText":"",
+            "bdMini":"2",
+            "bdMiniList":[
+                "qzone",
+                "tsina",
+                "weixin",
+                "renren",
+                "tqq",
+                "tieba",
+                "douban",
+                "sqq",
+                "diandian",
+                "huaban",
+                "youdao",
+                "mail",
+                "ty",
+                "fbook",
+                "twi",
+                "linkedin",
+                "copy",
+                "print"
+            ],
+            "bdPic":"",
+            "bdStyle":"0",
+            "bdSize":"16"
+        },
+        "slide":{
+            "type":"slide",
+            "bdImg":_bdImg,
+            "bdPos":"right",
+            "bdTop":"350"
+        },
+        "image":{
+            "viewList":[
+                "weixin",
+                "qzone",
+                "tsina",
+                "renren",
+                "douban",
+                "tqq"
+            ],
+            "viewText":"分享：",
+            "viewSize":"16"
+        },
+        "selectShare":{
+            "bdContainerClass":null,
+            "bdSelectMiniList":[
+                "weixin",
+                "qzone",
+                "tsina",
+                "renren",
+                "douban",
+                "tqq"
+            ]
+        }
+    };
+    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+
+
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'null', 'null');  
+ga('send', 'pageview');
+</script>
+
+
+  </body>
+</html>
+
