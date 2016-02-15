@@ -15,7 +15,7 @@
 <meta property="og:description" content="矩阵快速幂+费马小定理hdoj 5607
 基本思路
 首先考虑：询问从某个点出发，走 K 步到达其它各点的方案数？这个问题可以转化为矩阵相乘，所以矩阵快速幂即可解决。但是对于原问题的话，要求\(xy^{5+10^9}mod(7+10^9)\)因为 \( (x/y)mod P=x*y^{p-2}mod P\) (因为\(P=7+10^9\)为一个素数，满足费马小定理），所以我们可以把初始的矩阵每个元素">
-<meta property="og:updated_time" content="2016-02-14T12:50:27.000Z">
+<meta property="og:updated_time" content="2016-02-15T04:14:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hdoj-5607-矩阵快速幂+费马小定理">
 <meta name="twitter:description" content="矩阵快速幂+费马小定理hdoj 5607
@@ -147,7 +147,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/并查集/" style="font-size: 10px;">并查集</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/矩阵快速幂/" style="font-size: 10px;">矩阵快速幂</a>
+                        <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/并查集/" style="font-size: 10px;">并查集</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/矩阵快速幂/" style="font-size: 10px;">矩阵快速幂</a> <a href="/tags/背包/" style="font-size: 10px;">背包</a> <a href="/tags/转换/" style="font-size: 10px;">转换</a>
                     </div>
                 </section>
                 
@@ -170,7 +170,7 @@
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">专注于前端</div>
+                    <div id="js-aboutme">Study at the College of Information Science &amp; Technology, Nanjing forestry University</div>
                 </section>
                 
             </div>
@@ -271,11 +271,7 @@
 <p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script></p>
 <h2 id="矩阵快速幂+费马小定理">矩阵快速幂+费马小定理</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5607" target="_blank" rel="external"><strong>hdoj 5607</strong></a></p>
 <h3 id="基本思路">基本思路</h3><blockquote>
-<p>首先考虑：询问从某个点出发，走 K 步到达其它各点的方案数？<br>这个问题可以转化为矩阵相乘，所以矩阵快速幂即可解决。但是对于原问题的话，要求<br>\(xy^{5+10^9}mod(7+10^9)\)<br>因为 \( (x/y)mod P=x*y^{p-2}mod P\) (因为\(P=7+10^9\)为一个素数，满足费马小定理），所以我们可以把初始的矩阵每个元素值乘上 \(y^{p-2}\)，这样也就得到了最终的答案。</p>
-<ul>
-<li><a id="more"></a>
-</li>
-</ul>
+<p>首先考虑：询问从某个点出发，走 K 步到达其它各点的方案数？<br>这个问题可以转化为矩阵相乘，所以矩阵快速幂即可解决。但是对于原问题的话，要求<br>\(xy^{5+10^9}mod(7+10^9)\)<br>因为 \( (x/y)mod P=x*y^{p-2}mod P\) (因为\(P=7+10^9\)为一个素数，满足费马小定理），所以我们可以把初始的矩阵每个元素值乘上 \(y^{p-2}\)，这样也就得到了最终的答案。<br><a id="more"></a></p>
 </blockquote>
 <h3 id="传送门">传送门</h3><p><a href="http://blog.csdn.net/acdreamers/article/details/8220787" target="_blank" rel="external"><strong>逆元详解</strong></a></p>
 <h3 id="重要的代码">重要的代码</h3><p>高效的幂次方求解的代码(<strong><em>O(log(n))</em></strong>)</p>
@@ -299,25 +295,15 @@
   </div>
   
     
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/01/27/Hdoj-5607-矩阵快速幂-费马小定理/">Hdoj-5607-矩阵快速幂+费马小定理</a></p>
-        <p><span>文章作者:</span><a href="/" title="访问 Bian Shuqing 的个人博客">Bian Shuqing</a></p>
-        <p><span>发布时间:</span>2016年01月27日 - 22时01分</p>
-        <p><span>最后更新:</span>2016年02月14日 - 20时50分</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/01/27/Hdoj-5607-矩阵快速幂-费马小定理/" title="Hdoj-5607-矩阵快速幂+费马小定理">http://yoursite.com/2016/01/27/Hdoj-5607-矩阵快速幂-费马小定理/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/01/27/Hdoj-5607-矩阵快速幂-费马小定理/　　作者: Bian Shuqing" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script src="/js/clipboard.min.js"></script>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/02/15/Hdoj-5616-转换-背包/">
+                    Hdoj-5616-转换+背包
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -421,7 +407,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/02/15/Hdoj-5616-转换-背包/" title="上一篇: Hdoj-5616-转换+背包">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -433,7 +421,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/Hdoj-5607-矩阵快速幂-费马小定理/">Hdoj-5607-矩阵快速幂+费马小定理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/Hdoj-5612-DFS/">Hdoj-5612-DFS</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/22/Hdoj-5606-Tree（并查集）/">Hdoj 5606 Tree（并查集）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/28/MySpace/">MySpace</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/15/Hdoj-5616-转换-背包/">Hdoj-5616-转换+背包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/Hdoj-5607-矩阵快速幂-费马小定理/">Hdoj-5607-矩阵快速幂+费马小定理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/Hdoj-5612-DFS/">Hdoj-5612-DFS</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/22/Hdoj-5606-Tree（并查集）/">Hdoj 5606 Tree（并查集）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/28/MySpace/">MySpace</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");

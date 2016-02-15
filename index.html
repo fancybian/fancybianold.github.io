@@ -143,7 +143,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/并查集/" style="font-size: 10px;">并查集</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/矩阵快速幂/" style="font-size: 10px;">矩阵快速幂</a>
+                        <a href="/tags/dfs/" style="font-size: 10px;">dfs</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/并查集/" style="font-size: 10px;">并查集</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/矩阵快速幂/" style="font-size: 10px;">矩阵快速幂</a> <a href="/tags/背包/" style="font-size: 10px;">背包</a> <a href="/tags/转换/" style="font-size: 10px;">转换</a>
                     </div>
                 </section>
                 
@@ -166,7 +166,7 @@
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">专注于前端</div>
+                    <div id="js-aboutme">Study at the College of Information Science &amp; Technology, Nanjing forestry University</div>
                 </section>
                 
             </div>
@@ -223,6 +223,77 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Hdoj-5616-转换-背包" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/15/Hdoj-5616-转换-背包/" class="article-date">
+      <time datetime="2016-02-15T03:59:52.000Z" itemprop="datePublished">2016-02-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/15/Hdoj-5616-转换-背包/">Hdoj-5616-转换+背包</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=desert&amp;lang=css" defer="defer"></script></p>
+<p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script></p>
+<h2 id="转换+正反背包">转换+正反背包</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5616"><strong>hdoj 5616</strong></a></p>
+<h3 id="基本思路">基本思路</h3><p>题目中蕴含着两种需要计算的重量</p>
+<ol>
+<li>从所有的砝码中挑出任意种。</li>
+<li>（<strong>转换</strong>的思想）在天平的两端都挑出这些砝码中的一些，它也可以计算出差值，<strong>这个差值也是一种我们所要的重量</strong>。这其实一种转换，看下面这个公式
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/acm/">acm</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dp/">dp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/背包/">背包</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转换/">转换</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/15/Hdoj-5616-转换-背包/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Hdoj-5607-矩阵快速幂-费马小定理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -254,9 +325,7 @@
 <p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script></p>
 <h2 id="矩阵快速幂+费马小定理">矩阵快速幂+费马小定理</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5607"><strong>hdoj 5607</strong></a></p>
 <h3 id="基本思路">基本思路</h3><blockquote>
-<p>首先考虑：询问从某个点出发，走 K 步到达其它各点的方案数？<br>这个问题可以转化为矩阵相乘，所以矩阵快速幂即可解决。但是对于原问题的话，要求<br>\(xy^{5+10^9}mod(7+10^9)\)<br>因为 \( (x/y)mod P=x*y^{p-2}mod P\) (因为\(P=7+10^9\)为一个素数，满足费马小定理），所以我们可以把初始的矩阵每个元素值乘上 \(y^{p-2}\)，这样也就得到了最终的答案。</p>
-<ul>
-<li>
+<p>首先考虑：询问从某个点出发，走 K 步到达其它各点的方案数？<br>这个问题可以转化为矩阵相乘，所以矩阵快速幂即可解决。但是对于原问题的话，要求<br>\(xy^{5+10^9}mod(7+10^9)\)<br>因为 \( (x/y)mod P=x*y^{p-2}mod P\) (因为\(P=7+10^9\)为一个素数，满足费马小定理），所以我们可以把初始的矩阵每个元素值乘上 \(y^{p-2}\)，这样也就得到了最终的答案。<br>
           
       
     </div>
@@ -323,9 +392,7 @@
           
               <p><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=desert&amp;lang=css" defer="defer"></script></p>
 <h2 id="dfs+精度">dfs+精度</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5612"><strong>hdoj 5612</strong></a></p>
-<h3 id="基本思路">基本思路</h3><p>深度搜索各个方向，（数据量不大嘛，最多15个）然后进行计算。</p>
-<ul>
-<li>
+<h3 id="基本思路">基本思路</h3><p>深度搜索各个方向，（数据量不大嘛，最多15个）然后进行计算。<br>
           
       
     </div>
