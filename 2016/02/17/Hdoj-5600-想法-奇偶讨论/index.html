@@ -3,18 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>MySpace | FancyBian</title>
+  <title>Hdoj-5600-想法+奇偶讨论 | FancyBian</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="想法+奇偶讨论
+
+hdoj 5600
+本文重在分析该题目的思路，代码极其短，但是想到这个题目的思路却是挺复杂的过程。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySpace">
-<meta property="og:url" content="http://yoursite.com/2015/11/28/MySpace/index.html">
+<meta property="og:title" content="Hdoj-5600-想法+奇偶讨论">
+<meta property="og:url" content="http://yoursite.com/2016/02/17/Hdoj-5600-想法-奇偶讨论/index.html">
 <meta property="og:site_name" content="FancyBian">
-<meta property="og:description">
-<meta property="og:updated_time" content="2015-11-28T15:51:55.000Z">
+<meta property="og:description" content="想法+奇偶讨论
+
+hdoj 5600
+本文重在分析该题目的思路，代码极其短，但是想到这个题目的思路却是挺复杂的过程。">
+<meta property="og:image" content="http://7xqwup.com1.z0.glb.clouddn.com/hdu5600.PNG">
+<meta property="og:image" content="http://7xqwup.com1.z0.glb.clouddn.com/hdu5600-1.PNG">
+<meta property="og:image" content="http://7xqwup.com1.z0.glb.clouddn.com/hdu5600-2.PNG">
+<meta property="og:updated_time" content="2016-02-16T17:04:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySpace">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Hdoj-5600-想法+奇偶讨论">
+<meta name="twitter:description" content="想法+奇偶讨论
+
+hdoj 5600
+本文重在分析该题目的思路，代码极其短，但是想到这个题目的思路却是挺复杂的过程。">
   
     <link rel="alternative" href="/atom.xml" title="FancyBian" type="application/atom+xml">
   
@@ -219,11 +231,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-MySpace" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Hdoj-5600-想法-奇偶讨论" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/28/MySpace/" class="article-date">
-      <time datetime="2015-11-28T15:51:55.000Z" itemprop="datePublished">2015-11-28</time>
+      <a href="/2016/02/17/Hdoj-5600-想法-奇偶讨论/" class="article-date">
+      <time datetime="2016-02-16T16:49:38.000Z" itemprop="datePublished">2016-02-17</time>
 </a>
     </div>
   
@@ -236,7 +248,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      MySpace
+      Hdoj-5600-想法+奇偶讨论
     </h1>
   
 
@@ -244,8 +256,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/acm/">acm</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/奇偶讨论/">奇偶讨论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/想法/">想法</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -253,7 +273,22 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h2 id="想法+奇偶讨论">想法+奇偶讨论</h2><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=desert&amp;lang=css" defer="defer"></script>
+
+<p><strong><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5600" target="_blank" rel="external">hdoj 5600</a></strong></p>
+<p>本文重在分析该题目的思路，代码极其短，但是想到这个题目的思路却是挺复杂的过程。</p>
+<a id="more"></a>
+<h3 id="思路">思路</h3><p>自己拿到题目也想到了很多，用了一些小的样例去找寻一些规律，但是还是没有完全找到方法。<br>这个题目中重要的一点是你要能发现<strong>操作次数个数与N的奇偶的规律</strong>，（N是电灯的个数）<em>N是奇数，操作次数一定是奇数，N是偶数，操作次数是偶数</em>。<br>那么这幅图可以直观的理解上面这个结论。<br><img src="http://7xqwup.com1.z0.glb.clouddn.com/hdu5600.PNG" alt=""><br>下面你还可以得到一个结论，如果我要是的所有的灯全部熄灭的话，1要变0，0还得是0，1的操作次数一定是奇数次，0的操作次数一定是偶数次。<br>我们可以得到下面这个公式<br><img src="http://7xqwup.com1.z0.glb.clouddn.com/hdu5600-1.PNG" alt=""><br>所以我们毫无疑问地要说，如果1的个数的奇偶关系与N的奇偶不同那么它一定不可以全部熄灭。</p>
+<p>接下来，如果1的个数与N的个数奇偶相同，那0的个数是一定是偶数，那么也就是说在整个序列里，0可以两个两个的取，回到之前找规律时发现的一个重要特点：我们发现当我们从1走到i时，假设我们往回走到左边某个点k，再走回来i，那么你会发现有且仅有k和i这两个数相当于没有操作（因为走了偶数次）。也就是说我们可以每次任意选择这个序列里的两个0作为没有操作，然而不需操作的0的个数恰好是偶数个。<br>见下图<br><img src="http://7xqwup.com1.z0.glb.clouddn.com/hdu5600-2.PNG" alt=""></p>
+<h3 id="代码">代码</h3><pre class="prettyprint">
+<code class="language-cpp">
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> t,n,num,c;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line"><span class="keyword">while</span>(t--)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">c = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num);</span><br><span class="line"><span class="keyword">if</span>(num==<span class="number">1</span>)</span><br><span class="line">c++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>((c%<span class="number">2</span>)==(n%<span class="number">2</span>))</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"YES\n"</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"NO\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</code>
+</pre>
+
+<h2 id="致谢">致谢</h2><p>感谢七牛云存储对hexo的图片存储！</p>
+
       
     </div>
     
@@ -265,11 +300,17 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/01/07/hello-world/">
-                    Hello World
+                <a href="/2016/02/17/Hdoj-5627-贪心-连通图-位运算/">
+                    Hdoj-5627-贪心+连通图+位运算
                 </a>
             </div>
         
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/02/15/Hdoj-5616-转换-背包/">
+                    Hdoj-5616-转换+背包
+                </a>
+            </div>
         
     </nav>
 
@@ -278,7 +319,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#想法+奇偶讨论"><span class="toc-number">1.</span> <span class="toc-text">想法+奇偶讨论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">1.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.2.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#致谢"><span class="toc-number">2.</span> <span class="toc-text">致谢</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -342,7 +383,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2015/11/28/MySpace/" data-title="MySpace" data-url="http://yoursite.com/2015/11/28/MySpace/"></div>
+    <div class="ds-thread" data-thread-key="2016/02/17/Hdoj-5600-想法-奇偶讨论/" data-title="Hdoj-5600-想法+奇偶讨论" data-url="http://yoursite.com/2016/02/17/Hdoj-5600-想法-奇偶讨论/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -366,7 +407,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/01/07/hello-world/" title="上一篇: Hello World">
+            <a href="/2016/02/17/Hdoj-5627-贪心-连通图-位运算/" title="上一篇: Hdoj-5627-贪心+连通图+位运算">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -374,7 +415,9 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/02/15/Hdoj-5616-转换-背包/" title="下一篇: Hdoj-5616-转换+背包">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
