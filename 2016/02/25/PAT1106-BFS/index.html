@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | FancyBian</title>
+  <title>PAT1106(BFS) | FancyBian</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="寻找树中根节点离叶子节点最短的路径的个数PAT 1106">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2016/01/07/hello-world/index.html">
+<meta property="og:title" content="PAT1106(BFS)">
+<meta property="og:url" content="http://yoursite.com/2016/02/25/PAT1106-BFS/index.html">
 <meta property="og:site_name" content="FancyBian">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2015-11-28T15:26:13.000Z">
+<meta property="og:description" content="寻找树中根节点离叶子节点最短的路径的个数PAT 1106">
+<meta property="og:updated_time" content="2016-02-25T02:14:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="PAT1106(BFS)">
+<meta name="twitter:description" content="寻找树中根节点离叶子节点最短的路径的个数PAT 1106">
   
     <link rel="alternative" href="/atom.xml" title="FancyBian" type="application/atom+xml">
   
@@ -222,11 +219,11 @@ Quick">
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-PAT1106-BFS" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/07/hello-world/" class="article-date">
-      <time datetime="2016-01-07T15:19:36.000Z" itemprop="datePublished">2016-01-07</time>
+      <a href="/2016/02/25/PAT1106-BFS/" class="article-date">
+      <time datetime="2016-02-25T02:03:05.000Z" itemprop="datePublished">2016-02-25</time>
 </a>
     </div>
   
@@ -239,7 +236,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      PAT1106(BFS)
     </h1>
   
 
@@ -247,8 +244,16 @@ Quick">
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/PAT/">PAT</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bfs/">bfs</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -256,15 +261,16 @@ Quick">
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h2 id="寻找树中根节点离叶子节点最短的路径的个数">寻找树中根节点离叶子节点最短的路径的个数</h2><p><strong><a href="http://www.patest.cn/contests/pat-a-practise/1106" target="_blank" rel="external">PAT 1106</a></strong><br><a id="more"></a></p>
+<p><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=desert&amp;lang=css" defer="defer"></script></p>
+<h3 id="思路">思路</h3><p>BFS用在tree上，这一个题里主要关注的是用vector去保存每一个节点所连接的子节点，当BFS时，一旦发现该节点下面没有子节点，这一层一定是最短的路径，然后用当前的层数去为后面的节点做判断，如果接下来，仍然有节点没有子节点，那么用层数去验证，如果层数一致则是，否则不是。</p>
+<h3 id="STL——vector">STL——vector</h3><p><strong><a href="http://fancybian.github.io/2016/02/25/C-学习笔记1/" target="_blank" rel="external">vector</a></strong></p>
+<h3 id="代码">代码</h3><pre class="prettyprint">
+<code class="language-cpp">
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> LL long long;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">100005</span>;</span><br><span class="line"><span class="keyword">double</span> pi,r;</span><br><span class="line"><span class="keyword">struct</span> node<span class="comment">//节点</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">int</span> v;<span class="comment">//节点编号</span></span><br><span class="line"><span class="keyword">int</span> cnt;<span class="comment">//记录距离根节点的层数</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt; p[MAXN];<span class="comment">//构造这棵树</span></span><br><span class="line"><span class="built_in">queue</span> &lt;node&gt; q;</span><br><span class="line"><span class="keyword">int</span> minct=-<span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bfs</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> c=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(!q.empty())</span><br><span class="line">&#123;</span><br><span class="line">node nd = q.front();</span><br><span class="line">q.pop();</span><br><span class="line"><span class="keyword">int</span> id = nd.v;</span><br><span class="line"><span class="keyword">int</span> ct = nd.cnt;</span><br><span class="line"><span class="comment">//初始情况下flag记为false，也就是还未有叶子节点</span></span><br><span class="line"><span class="comment">//当第一次出现有叶子节点是flag变为true</span></span><br><span class="line"><span class="comment">//如果flag记为true,那么后面的节点如果还有子节点也没有必要再放进去了</span></span><br><span class="line"><span class="keyword">if</span>(p[id].size()!=<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(flag==<span class="literal">false</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">int</span> len = p[id].size();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">&#123;</span><br><span class="line">node tn=&#123;p[id][i],ct+<span class="number">1</span>&#125;;<span class="comment">//结构体对象赋值的简化表达</span></span><br><span class="line">q.push(tn);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//如果第一次有叶子节点即（flag==false）</span></span><br><span class="line"><span class="comment">//或者后面发现叶子节点层数相同（minct==ct）</span></span><br><span class="line"><span class="keyword">if</span>(flag==<span class="literal">false</span>||minct==ct)</span><br><span class="line">&#123;</span><br><span class="line">flag=<span class="literal">true</span>;</span><br><span class="line">minct=ct;</span><br><span class="line">c++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">freopen(<span class="string">"1106.txt"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line"><span class="keyword">int</span> m,k,t,s;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;m&gt;&gt;pi&gt;&gt;r;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;k);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j&lt;=k;j++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">p[i].push_back(t);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">node nd;</span><br><span class="line">nd.v=<span class="number">0</span>;</span><br><span class="line">nd.cnt=<span class="number">0</span>;</span><br><span class="line">q.push(nd);</span><br><span class="line">s = bfs();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=minct;i++)</span><br><span class="line">&#123;</span><br><span class="line">pi=pi*(<span class="number">1</span>+r/<span class="number">100.0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%.4lf %d\n"</span>,pi,s);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</code>
+</pre>
 
       
     </div>
@@ -277,15 +283,15 @@ Quick">
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/01/22/Hdoj-5606-Tree（并查集）/">
-                    Hdoj 5606 Tree（并查集）
+                <a href="/2016/02/25/C-学习笔记1/">
+                    C++学习笔记1
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2015/11/28/MySpace/">
-                    MySpace
+                <a href="/2016/02/17/Hdoj-5627-贪心-连通图-位运算/">
+                    Hdoj-5627-贪心+连通图+位运算
                 </a>
             </div>
         
@@ -296,7 +302,7 @@ Quick">
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#寻找树中根节点离叶子节点最短的路径的个数"><span class="toc-number">1.</span> <span class="toc-text">寻找树中根节点离叶子节点最短的路径的个数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">1.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#STL——vector"><span class="toc-number">1.2.</span> <span class="toc-text">STL——vector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -360,7 +366,7 @@ Quick">
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/01/07/hello-world/" data-title="Hello World" data-url="http://yoursite.com/2016/01/07/hello-world/"></div>
+    <div class="ds-thread" data-thread-key="2016/02/25/PAT1106-BFS/" data-title="PAT1106(BFS)" data-url="http://yoursite.com/2016/02/25/PAT1106-BFS/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -384,7 +390,7 @@ Quick">
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/01/22/Hdoj-5606-Tree（并查集）/" title="上一篇: Hdoj 5606 Tree（并查集）">
+            <a href="/2016/02/25/C-学习笔记1/" title="上一篇: C++学习笔记1">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -392,7 +398,7 @@ Quick">
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2015/11/28/MySpace/" title="下一篇: MySpace">
+            <a href="/2016/02/17/Hdoj-5627-贪心-连通图-位运算/" title="下一篇: Hdoj-5627-贪心+连通图+位运算">
                 <i class="fa fa-angle-right"></i>
             </a>
         

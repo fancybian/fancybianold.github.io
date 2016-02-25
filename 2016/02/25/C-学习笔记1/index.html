@@ -3,28 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>关于我&amp;留言板 | FancyBian</title>
+  <title>C++学习笔记1 | FancyBian</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Shuqing Bian
-This is a brief list of ‘Big Events’ in my college life.
-
-Nov. 6, 2015:  &amp;emsp;预备期满一年，正式成为一名共产党员。Become a member of the Communist Party of China.Oct. 18, 2015:  &amp;emsp;China Collegiate Pro">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于我&留言板">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+  <meta name="description" content="list, vector, map, set 区别与用法比较（待更新）概述
+List封装了链表,Vector封装了数组, list和vector的最主要的区别在于vector使用连续内存存储的，他支持[]运算符，而list是以链表形式实现的，不支持[]。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++学习笔记1">
+<meta property="og:url" content="http://yoursite.com/2016/02/25/C-学习笔记1/index.html">
 <meta property="og:site_name" content="FancyBian">
-<meta property="og:description" content="Shuqing Bian
-This is a brief list of ‘Big Events’ in my college life.
-
-Nov. 6, 2015:  &amp;emsp;预备期满一年，正式成为一名共产党员。Become a member of the Communist Party of China.Oct. 18, 2015:  &amp;emsp;China Collegiate Pro">
-<meta property="og:image" content="http://7xqwup.com1.z0.glb.clouddn.com/20160208_171337.jpg">
-<meta property="og:updated_time" content="2016-02-16T17:08:48.000Z">
+<meta property="og:description" content="list, vector, map, set 区别与用法比较（待更新）概述
+List封装了链表,Vector封装了数组, list和vector的最主要的区别在于vector使用连续内存存储的，他支持[]运算符，而list是以链表形式实现的，不支持[]。">
+<meta property="og:updated_time" content="2016-02-25T02:09:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于我&留言板">
-<meta name="twitter:description" content="Shuqing Bian
-This is a brief list of ‘Big Events’ in my college life.
-
-Nov. 6, 2015:  &amp;emsp;预备期满一年，正式成为一名共产党员。Become a member of the Communist Party of China.Oct. 18, 2015:  &amp;emsp;China Collegiate Pro">
+<meta name="twitter:title" content="C++学习笔记1">
+<meta name="twitter:description" content="list, vector, map, set 区别与用法比较（待更新）概述
+List封装了链表,Vector封装了数组, list和vector的最主要的区别在于vector使用连续内存存储的，他支持[]运算符，而list是以链表形式实现的，不支持[]。">
   
     <link rel="alternative" href="/atom.xml" title="FancyBian" type="application/atom+xml">
   
@@ -47,7 +40,7 @@ Nov. 6, 2015:  &amp;emsp;预备期满一年，正式成为一名共产党员。B
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -229,11 +222,11 @@ Nov. 6, 2015:  &amp;emsp;预备期满一年，正式成为一名共产党员。B
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-C-学习笔记1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/about/index.html" class="article-date">
-      <time datetime="2016-02-14T15:40:40.000Z" itemprop="datePublished">2016-02-14</time>
+      <a href="/2016/02/25/C-学习笔记1/" class="article-date">
+      <time datetime="2016-02-25T02:03:48.000Z" itemprop="datePublished">2016-02-25</time>
 </a>
     </div>
   
@@ -246,7 +239,7 @@ Nov. 6, 2015:  &amp;emsp;预备期满一年，正式成为一名共产党员。B
         
   
     <h1 class="article-title" itemprop="name">
-      关于我&amp;留言板
+      C++学习笔记1
     </h1>
   
 
@@ -254,8 +247,16 @@ Nov. 6, 2015:  &amp;emsp;预备期满一年，正式成为一名共产党员。B
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/C-学习笔记/">C++学习笔记</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STL/">STL</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -263,46 +264,15 @@ Nov. 6, 2015:  &amp;emsp;预备期满一年，正式成为一名共产党员。B
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta {
-        display: none;
-    }
-    #container .article .article-title {
-        padding-right: 0;
-    }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover {
-        border-left: none;
-    }
-    .article-title {
-        font-size: 1.6em
-    }
-    .article-meta {
-        display: none;
-    }
-    .article-entry hr {
-        margin: 0;
-    }
-    #container .article-info-post.article-info {
-      display: none;
-      }
-    #container .article .article-title {
-    padding: 0;
-    }
-</style>
-
-
-          
-        <p><strong style="color:#1e73be;font-size:270%;line-height:450%;">Shuqing Bian</strong><br><img style="float:right" src="http://7xqwup.com1.z0.glb.clouddn.com/20160208_171337.jpg" alt="This is fancybian"></p>
-<h4 id="This_is_a_brief_list_of_‘Big_Events’_in_my_college_life-">This is a brief list of ‘Big Events’ in my college life.</h4>
-
-<ul><br><li>Nov. 6, 2015:  &emsp;预备期满一年，正式成为一名共产党员。Become a member of <strong>the Communist Party of China</strong>.</li><br><li>Oct. 18, 2015:  &emsp;China Collegiate Programming Contest(<a href="http://ccpc.io/" target="_blank" rel="external">CCPC</a>) Honorable Mention.</li><br><li>Jun. 6, 2015:  &emsp;China Collegiate Programming Contest(Hunan)(<a href="http://ccpc.io/" target="_blank" rel="external">CCPC</a>) Bronze Medal.</li><br><li>May. 30, 2015: &emsp;第六届<a href="http://www.lanqiao.org" title="Lanqiao" target="_blank" rel="external">蓝桥杯</a>全国软件和信息技术专业人才大赛全国总决赛B组二等奖 .</li><br><li>Dec. 7, 2014:    &emsp;<a href="http://board.acmicpc.info/icpc2014/shu_onsite.php" title="ACM-ICPC" target="_blank" rel="external">ACM-ICPC</a> Asia Regional Contest Shanghai Site Honorable Mention.</li><br><li>Oct. 17, 2014:  &emsp;National Scholarship (¥8000).</li><br><li>Jul. 12, 2014:    &emsp;First take part in <a href="http://acmicpc.cn/2014/shanghaiinvitational.html" title="ACM-ICPC" target="_blank" rel="external">ACM-ICPC</a> China Shanghai Invitational Programming Contest.</li><br><li>Sep. 1, 2013:  &emsp;start my college life at <a href="http://www.njfu.edu.cn/" title="Nanjing Forestry University" target="_blank" rel="external">Nanjing Forestry University</a>.</li><br></ul><br><strong style="color:#ff0000;font-size:200%;">Contact Me</strong><br><li>E-Mail : bsq0325@gmail.com</li><br>
-
+        <h2 id="list,_vector,_map,_set_区别与用法比较（待更新）">list, vector, map, set 区别与用法比较（待更新）</h2><h3 id="概述">概述</h3><ul>
+<li>List封装了<strong>链表</strong>,Vector封装了<strong>数组</strong>, list和vector的最主要的区别在于<strong>vector使用连续内存存储</strong>的，他<strong>支持[]运算符</strong>，而<strong>list是以链表形式实现的，不支持[]</strong>。<a id="more"></a></li>
+<li><strong>Vector</strong>对于<strong>随机访问的速度很快</strong>，但是对于插入尤其是在头部插入元素速度很慢，在<strong>尾部插入速度很快（push_back）</strong>。<strong>List对于随机访问速度慢得多</strong>，因为可能要遍历整个链表才能做到，<strong>但是对于插入就快的多了</strong>，不需要拷贝和移动数据，只需要改变指针的指向就可以了。另外对于新添加的元素，Vector有一套算法，而List可以任意加入。</li>
+<li>Map,Set属于<strong>标准关联容器</strong>，使用了非常高效的<strong>平衡检索二叉树</strong>：<strong>红黑树</strong>，他的<strong>插入删除效率比其他序列容器高</strong>是因为不需要做内存拷贝和内存移动，而直接替换指向节点的指针即可。</li>
+<li>Set和Vector的区别在于<strong>Set不包含重复的数据</strong>。Set和Map的区别在于<strong>Set只含有Key，而Map有一个Key和Key所对应的Value两个元素</strong>。</li>
+<li>Map和Hash_Map的区别是<strong>Hash_Map使用了Hash算法来加快查找过程</strong>，但是需要更多的内存来存放这些Hash桶元素，因此可以算得上是采用空间来换取时间策略。<h3 id="vector用法">vector用法</h3>详细的函数实现功能：其中<code>vector&lt;int&gt; c</code>.<br><pre class="prettyprint"><br><code class="language-cpp"><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">c.clear() 移除容器中所有数据。</span><br><span class="line">    </span><br><span class="line">c.empty() 判断容器是否为空。</span><br><span class="line">    </span><br><span class="line">c.erase(pos)删除pos位置的数据</span><br><span class="line">    </span><br><span class="line">c.erase(beg,<span class="operator"><span class="keyword">end</span>) 删除[beg,<span class="keyword">end</span>)区间的数据</span><br><span class="line">    </span><br><span class="line"><span class="keyword">c</span>.front() 传回第一个数据。</span><br><span class="line">    </span><br><span class="line"><span class="keyword">c</span>.<span class="keyword">insert</span>(pos,elem)  在pos位置插入一个elem拷贝</span><br><span class="line">    </span><br><span class="line"><span class="keyword">c</span>.pop_back() 删除最后一个数据。</span><br><span class="line">    </span><br><span class="line"><span class="keyword">c</span>.push_back(elem) 在尾部加入一个数据。</span><br><span class="line">    </span><br><span class="line"><span class="keyword">c</span>.<span class="keyword">resize</span>(<span class="keyword">num</span>) 重新设置该容器的大小</span><br><span class="line">    </span><br><span class="line"><span class="keyword">c</span>.<span class="keyword">size</span>() 回容器中实际数据的个数。</span><br><span class="line">    </span><br><span class="line"><span class="keyword">c</span>.<span class="keyword">begin</span>()   返回指向容器第一个元素的迭代器</span><br><span class="line">    </span><br><span class="line"><span class="keyword">c</span>.<span class="keyword">end</span>() 返回指向容器最后一个元素的迭代器</span></span><br></pre></td></tr></table></figure>
+</code></pre></li>
+</ul>
+<p><br></p>
 
       
     </div>
@@ -312,8 +282,64 @@ Nov. 6, 2015:  &amp;emsp;预备期满一年，正式成为一名共产党员。B
     
 
 
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/02/25/PAT1106-BFS/">
+                    PAT1106(BFS)
+                </a>
+            </div>
+        
+    </nav>
+
   
 </article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#list,_vector,_map,_set_区别与用法比较（待更新）"><span class="toc-number">1.</span> <span class="toc-text">list, vector, map, set 区别与用法比较（待更新）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-number">1.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vector用法"><span class="toc-number">1.2.</span> <span class="toc-text">vector用法</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
 
 
     <div class="share">
@@ -336,7 +362,7 @@ Nov. 6, 2015:  &amp;emsp;预备期满一年，正式成为一名共产党员。B
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="about/index.html" data-title="关于我&amp;留言板" data-url="http://yoursite.com/about/index.html"></div>
+    <div class="ds-thread" data-thread-key="2016/02/25/C-学习笔记1/" data-title="C++学习笔记1" data-url="http://yoursite.com/2016/02/25/C-学习笔记1/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -355,6 +381,44 @@ Nov. 6, 2015:  &amp;emsp;预备期满一年，正式成为一名共产党员。B
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/02/25/PAT1106-BFS/" title="下一篇: PAT1106(BFS)">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/25/C-学习笔记1/">C++学习笔记1</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/25/PAT1106-BFS/">PAT1106(BFS)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/17/Hdoj-5627-贪心-连通图-位运算/">Hdoj-5627-贪心+连通图+位运算</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/17/Hdoj-5600-想法-奇偶讨论/">Hdoj-5600-想法+奇偶讨论</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/15/Hdoj-5616-转换-背包/">Hdoj-5616-转换+背包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/Hdoj-5607-矩阵快速幂-费马小定理/">Hdoj-5607-矩阵快速幂+费马小定理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/Hdoj-5612-DFS/">Hdoj-5612-DFS</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/22/Hdoj-5606-Tree（并查集）/">Hdoj 5606 Tree（并查集）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/28/MySpace/">MySpace</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
 
 
 
