@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>MySpace | FancyBian</title>
+  <title>Codeforces Round #343 D | FancyBian</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="LIS模型+BITproblem
+题意描述给定\(N\le{10^{5}}\)个蛋糕，它的叠放方式是从下到上（并且下面的下标小于上面的下标），体积逐个增大的（严格的递增）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySpace">
-<meta property="og:url" content="http://yoursite.com/2015/11/28/MySpace/index.html">
+<meta property="og:title" content="Codeforces Round #343 D">
+<meta property="og:url" content="http://yoursite.com/2016/02/28/Codeforces-Round-343-D/index.html">
 <meta property="og:site_name" content="FancyBian">
-<meta property="og:description">
-<meta property="og:updated_time" content="2015-11-28T15:51:55.000Z">
+<meta property="og:description" content="LIS模型+BITproblem
+题意描述给定\(N\le{10^{5}}\)个蛋糕，它的叠放方式是从下到上（并且下面的下标小于上面的下标），体积逐个增大的（严格的递增）">
+<meta property="og:updated_time" content="2016-02-28T12:41:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySpace">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Codeforces Round #343 D">
+<meta name="twitter:description" content="LIS模型+BITproblem
+题意描述给定\(N\le{10^{5}}\)个蛋糕，它的叠放方式是从下到上（并且下面的下标小于上面的下标），体积逐个增大的（严格的递增）">
   
     <link rel="alternative" href="/atom.xml" title="FancyBian" type="application/atom+xml">
   
@@ -219,11 +222,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-MySpace" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Codeforces-Round-343-D" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/28/MySpace/" class="article-date">
-      <time datetime="2015-11-28T15:51:55.000Z" itemprop="datePublished">2015-11-28</time>
+      <a href="/2016/02/28/Codeforces-Round-343-D/" class="article-date">
+      <time datetime="2016-02-28T12:28:27.000Z" itemprop="datePublished">2016-02-28</time>
 </a>
     </div>
   
@@ -236,7 +239,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      MySpace
+      Codeforces Round #343 D
     </h1>
   
 
@@ -244,8 +247,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/acm/">acm</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动态规划/">动态规划</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/树状数组/">树状数组</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -253,7 +264,21 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <p><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=desert&amp;lang=css" defer="defer"></script></p>
+<p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script></p>
+<h2 id="LIS模型+BIT">LIS模型+BIT</h2><p><strong><a href="http://codeforces.com/problemset/problem/629/D" target="_blank" rel="external">problem</a></strong></p>
+<h3 id="题意描述">题意描述</h3><p>给定\(N\le{10^{5}}\)个蛋糕，它的叠放方式是从下到上（并且下面的下标小于上面的下标），体积逐个增大的（严格的递增）<br><a id="more"></a></p>
+<h3 id="LIS模型">LIS模型</h3><p>直接列出状态转移公式：\(f[i]=max { f[j] } +V_i\)其中\(j \lt i\)并且\(V_j \lt V_i\)<br><br>其中解释一下\(f[i]\)，它表示最上面一个下标为i的蛋糕的当前最大体积。</p>
+<h3 id="传送门">传送门</h3><p>很久之前自己博客上写的关于树状数组的总结<br><br><strong><a href="http://www.cnblogs.com/fancy-itlife/p/4312170.html" target="_blank" rel="external">树状数组总结</a></strong></p>
+<h3 id="解决超时的办法——BIT">解决超时的办法——BIT</h3><p>树状数组完全可以将时间优化到\(nlog(n)\),我们的时间主要耗在我要每一次去循环一遍在i之前并且<strong>之前的（这里的之前是指的我要按序拿取蛋糕，也就是之前摆放的蛋糕）最上面的蛋糕体积小于当前最顶层蛋糕</strong>的<strong>最大的体积总和</strong>，找到最大的那一个，是否可以快速的查找到了，用树状数组完成这件事，我以为这类题目<strong>有两个顺序</strong>，一个是按次序拿取得顺序，另一个就是<strong>体积从小到大摆放</strong>，我们可以优化的就是体积这块，既然我要找之前最顶层蛋糕体积比它小的最大体积和，我完全可以将体积离散化（在代码里有解释），运用树状数组的性质，不断向前取得最大体积和。然后更新树状数组！<br><br><br>有任何关于此题的疑问和解释，欢迎提出评论！</p>
+<h3 id="类似的问题">类似的问题</h3><p>（待明天更新）</p>
+<h3 id="代码">代码</h3><pre class="prettyprint">
+<code class="language-cpp">
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#<span class="keyword">include</span>&lt;iostream&gt;</span><br><span class="line">#<span class="keyword">include</span>&lt;cstdio&gt;</span><br><span class="line">#<span class="keyword">include</span>&lt;cstring&gt;</span><br><span class="line">#<span class="keyword">include</span>&lt;algorithm&gt;</span><br><span class="line">#<span class="keyword">include</span>&lt;cmath&gt;</span><br><span class="line">#<span class="keyword">include</span>&lt;vector&gt;</span><br><span class="line">#define LL long long</span><br><span class="line"><span class="keyword">const</span> int MAXN=100005,<span class="keyword">INF</span> = 0x3f3f3f3f;</span><br><span class="line">using namespace std;</span><br><span class="line">LL vt[MAXN];<span class="comment">//记录蛋糕的体积</span></span><br><span class="line">vector &lt;LL&gt; v;<span class="comment">//作为排序和离散化的重要数组</span></span><br><span class="line">LL <span class="keyword">d</span>[MAXN];</span><br><span class="line"><span class="comment">//首先的d[]数组是按照体积从小到大依次排序的</span></span><br><span class="line"><span class="comment">//树状数组d[i]记录是的目前（！重要）按最顶层蛋糕体积排序最小的i个（前i个中）体积总和最大的体积数</span></span><br><span class="line">int <span class="keyword">n</span>;</span><br><span class="line"><span class="comment">//树状数组代码</span></span><br><span class="line">int lowbit(int x)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">return</span> x&amp;-x;</span><br><span class="line">&#125;</span><br><span class="line">LL <span class="literal">get</span>(int x)</span><br><span class="line">&#123;</span><br><span class="line">LL s = 0;</span><br><span class="line"><span class="keyword">while</span>(x&gt;=1)</span><br><span class="line">&#123;</span><br><span class="line">s = <span class="literal">max</span>(<span class="keyword">d</span>[x],s);<span class="comment">//不断获取这段区间的最大值</span></span><br><span class="line">x -= lowbit(x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line">LL add(int x,LL val)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">while</span>(x&lt;=<span class="keyword">n</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">d</span>[x] = <span class="literal">max</span>(<span class="keyword">d</span>[x],val);<span class="comment">//不断更新自己要被掌控的这一段区间里最大的体积值</span></span><br><span class="line">x += lowbit(x);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">LL r,<span class="keyword">h</span>;</span><br><span class="line">scanf(<span class="string">"%d"</span>,&amp;<span class="keyword">n</span>);</span><br><span class="line">memset(<span class="keyword">d</span>,0,sizeof(<span class="keyword">d</span>));</span><br><span class="line"><span class="keyword">for</span>(int i = 1;i&lt;=<span class="keyword">n</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//scanf("%I64d%I64d",&amp;r,&amp;h);</span></span><br><span class="line">cin&gt;&gt;r&gt;&gt;<span class="keyword">h</span>;</span><br><span class="line">vt[i]=r*r*<span class="keyword">h</span>;</span><br><span class="line">v.push_back(vt[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">sort</span>(v.begin(),v.end());<span class="comment">//按体积排序</span></span><br><span class="line">v.resize(unique(v.begin(),v.end())-v.begin());<span class="comment">//详见STL用法</span></span><br><span class="line"><span class="comment">//作用是去重复的体积</span></span><br><span class="line">LL maxm=0,cur;</span><br><span class="line"><span class="keyword">for</span>(int i = 1;i&lt;=<span class="keyword">n</span>;i++)<span class="comment">//按序拿</span></span><br><span class="line">&#123;</span><br><span class="line">int idx = lower_bound(v.begin(),v.end(),vt[i])-v.begin()+1;<span class="comment">//第i小的体积就排树状数组的第i位</span></span><br><span class="line">cur = <span class="literal">get</span>(idx-1)+vt[i];<span class="comment">//前面的最大体积和（首先它肯定已经取过了，要不然值为初始化0</span></span><br><span class="line"><span class="comment">//第二它的最顶层体积是比当前小的，它的值是当前的最大体积值）+vt[i]</span></span><br><span class="line">maxm  = <span class="literal">max</span>(maxm,cur);<span class="comment">//更新最大值</span></span><br><span class="line"><span class="comment">//cout&lt;&lt;"amxm "&lt;&lt;maxm&lt;&lt;endl;</span></span><br><span class="line">add(idx,cur);<span class="comment">//加入到树状数组中</span></span><br><span class="line">&#125;</span><br><span class="line">printf(<span class="string">"%.12lf\n"</span>,maxm*<span class="literal">acos</span>(-1));</span><br><span class="line"><span class="keyword">return</span> 0 ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</code>
+</pre> 
+
       
     </div>
     
@@ -264,12 +289,12 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/01/07/hello-world/">
-                    Hello World
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/02/25/C-学习笔记1/">
+                    C++学习笔记1
                 </a>
             </div>
-        
         
     </nav>
 
@@ -278,7 +303,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#LIS模型+BIT"><span class="toc-number">1.</span> <span class="toc-text">LIS模型+BIT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题意描述"><span class="toc-number">1.1.</span> <span class="toc-text">题意描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LIS模型"><span class="toc-number">1.2.</span> <span class="toc-text">LIS模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传送门"><span class="toc-number">1.3.</span> <span class="toc-text">传送门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决超时的办法——BIT"><span class="toc-number">1.4.</span> <span class="toc-text">解决超时的办法——BIT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类似的问题"><span class="toc-number">1.5.</span> <span class="toc-text">类似的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.6.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -342,7 +367,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2015/11/28/MySpace/" data-title="MySpace" data-url="http://yoursite.com/2015/11/28/MySpace/"></div>
+    <div class="ds-thread" data-thread-key="2016/02/28/Codeforces-Round-343-D/" data-title="Codeforces Round #343 D" data-url="http://yoursite.com/2016/02/28/Codeforces-Round-343-D/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -366,15 +391,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/01/07/hello-world/" title="上一篇: Hello World">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/02/25/C-学习笔记1/" title="下一篇: C++学习笔记1">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
