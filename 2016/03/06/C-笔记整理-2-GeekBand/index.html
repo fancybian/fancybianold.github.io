@@ -3,24 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hdoj 5606 Tree（并查集） | FancyBian</title>
+  <title> C++笔记整理 2 GeekBand  | FancyBian</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基础的并查集问题HDOJ—5606 
-题意描述给出一棵树，n个点，每条边的权值只有0和1，求每一个点离它最近的点的个数（包括自身）。
-一些思路起初以为只要找每一个点相邻它的权值为0的点，忽视了一个很特别的情况，比如0的节点有一个权值为0的边连着节点1，节点1有一个权值为0的边连着节点2，那么节点1的相邻最近的点总共3个（包括自身），然而如果按照自己刚才的思路就错了。那么此题很明显看出来要用到并查集">
+  <meta name="description" content="friend（友元）相同class的各个objects互为friends（友元）即可以直接调用private的成员变量，方法数据尽量放在private里">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hdoj 5606 Tree（并查集）">
-<meta property="og:url" content="http://yoursite.com/2016/01/22/Hdoj-5606-Tree（并查集）/index.html">
+<meta property="og:title" content=" C++笔记整理 2 GeekBand ">
+<meta property="og:url" content="http://yoursite.com/2016/03/06/C-笔记整理-2-GeekBand/index.html">
 <meta property="og:site_name" content="FancyBian">
-<meta property="og:description" content="基础的并查集问题HDOJ—5606 
-题意描述给出一棵树，n个点，每条边的权值只有0和1，求每一个点离它最近的点的个数（包括自身）。
-一些思路起初以为只要找每一个点相邻它的权值为0的点，忽视了一个很特别的情况，比如0的节点有一个权值为0的边连着节点1，节点1有一个权值为0的边连着节点2，那么节点1的相邻最近的点总共3个（包括自身），然而如果按照自己刚才的思路就错了。那么此题很明显看出来要用到并查集">
-<meta property="og:updated_time" content="2016-02-14T12:49:39.000Z">
+<meta property="og:description" content="friend（友元）相同class的各个objects互为friends（友元）即可以直接调用private的成员变量，方法数据尽量放在private里">
+<meta property="og:updated_time" content="2016-03-06T15:35:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hdoj 5606 Tree（并查集）">
-<meta name="twitter:description" content="基础的并查集问题HDOJ—5606 
-题意描述给出一棵树，n个点，每条边的权值只有0和1，求每一个点离它最近的点的个数（包括自身）。
-一些思路起初以为只要找每一个点相邻它的权值为0的点，忽视了一个很特别的情况，比如0的节点有一个权值为0的边连着节点1，节点1有一个权值为0的边连着节点2，那么节点1的相邻最近的点总共3个（包括自身），然而如果按照自己刚才的思路就错了。那么此题很明显看出来要用到并查集">
+<meta name="twitter:title" content=" C++笔记整理 2 GeekBand ">
+<meta name="twitter:description" content="friend（友元）相同class的各个objects互为friends（友元）即可以直接调用private的成员变量，方法数据尽量放在private里">
   
     <link rel="alternative" href="/atom.xml" title="FancyBian" type="application/atom+xml">
   
@@ -225,11 +219,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Hdoj-5606-Tree（并查集）" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-C-笔记整理-2-GeekBand" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/22/Hdoj-5606-Tree（并查集）/" class="article-date">
-      <time datetime="2016-01-22T13:05:56.000Z" itemprop="datePublished">2016-01-22</time>
+      <a href="/2016/03/06/C-笔记整理-2-GeekBand/" class="article-date">
+      <time datetime="2016-03-06T15:33:05.000Z" itemprop="datePublished">2016-03-06</time>
 </a>
     </div>
   
@@ -242,7 +236,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hdoj 5606 Tree（并查集）
+       C++笔记整理 2 GeekBand 
     </h1>
   
 
@@ -251,15 +245,11 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/acm/">acm</a>
+    <a class="article-category-link" href="/categories/C-学习笔记/">C++学习笔记</a>
     </div>
 
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/并查集/">并查集</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -268,33 +258,25 @@
       
           
         <p><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=desert&amp;lang=css" defer="defer"></script></p>
-<h2 id="基础的并查集问题">基础的并查集问题</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5606" target="_blank" rel="external"><strong>HDOJ—5606</strong></a> </p>
-<h3 id="题意描述">题意描述</h3><p>给出一棵树，n个点，每条边的权值只有0和1，求每一个点离它最近的点的个数（包括自身）。</p>
-<h3 id="一些思路">一些思路</h3><p>起初以为只要找每一个点相邻它的权值为0的点，忽视了一个很特别的情况，比如0的节点有一个权值为0的边连着节点1，节点1有一个权值为0的边连着节点2，那么节点1的相邻最近的点总共3个（包括自身），然而如果按照自己刚才的思路就错了。那么此题很明显看出来要用到<strong>并查集</strong>。<br><a id="more"></a></p>
-<h3 id="关于并查集">关于并查集</h3><p>给出关键的两步:</p>
-<h4 id="寻找所有同一集合的大Boss">寻找所有同一集合的大Boss</h4><pre class="prettyprint">
+<h3 id="friend（友元）">friend（友元）</h3><p>相同class的各个objects互为friends（友元）<br>即可以直接调用private的成员变量，方法<br>数据尽量放在private里<br><a id="more"></a></p>
+<h3 id="const成员函数">const成员函数</h3><p>构造函数可以有多个，重载<br>用初始化列表<br>double real( ) const { return re; }<br>不改变数据内容<br>const 成员函数(const的作用：说明其不会修改数据成员)<br>任何不会修改数据成员的函数都应该声明为const 类型。如果在编写const 成员函数时，不慎修改了数据成员，或者调用了其它非const 成员函数，编译器将指出错误，这无疑会提高程序的健壮性<br>关于Const函数的几点规则：<br>a. const对象只能访问const成员函数,而非const对象可以访问任意的成员函数,包括const成员函数.<br>b. const对象的成员是不可修改的,然而const对象通过指针维护的对象却是可以修改的.<br>c. const成员函数不可以修改对象的数据,不管对象是否具有const性质.它在编译时,以是否修改成员数据为依据,进行检查.</p>
+<h3 id="参数传递_pass_by_value_OR_pass_by_reference(to_const)">参数传递 pass by value OR pass by reference(to const)</h3><p>引用 &amp;<br>尽量不要传值！<br>如果不想改动值使用 const XXX&amp;<br>返回值的传递也尽量传reference<br>若在函数里创建局部变量，return不能传引用</p>
+<p>任何成员函数都一个this pointer 指向调用者<br>return by reference 传递者无需知道接收者是以reference形式接收</p>
+<h3 id="防卫式声明">防卫式声明</h3><pre class="prettyprint">
 <code class="language-cpp">
-<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findV</span><span class="params">(<span class="keyword">int</span> v)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(f[v] == v)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> v;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		f[v] = findV(v);</span><br><span class="line">		<span class="keyword">return</span> f[v];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#ifndef</span>  _COMPLEX_</span><br><span class="line"><span class="hexcolor">#def</span>ine _COMPLEX_</span><br><span class="line"></span><br><span class="line">......</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
 
 </code>
 </pre>
 
-<h4 id="合并">合并</h4><pre class="prettyprint">
+<h3 id="ostream">ostream</h3><pre class="prettyprint">
 <code class="language-cpp">
-
-<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x1 = findV(x);<span class="comment">//追根溯源找到最终的大boss</span></span><br><span class="line">	<span class="keyword">int</span> y1 = findV(y);</span><br><span class="line">	<span class="keyword">if</span>(x1!=y1)<span class="comment">//如果两个的领导不同，说明之前他们分属两个不同的集团</span></span><br><span class="line">	&#123;</span><br><span class="line">		f[y] = x1;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ostream &amp; operator &lt;&lt; (ostream &amp; os , <span class="keyword">const</span> <span class="built_in">complex</span> &amp; x)</span><br><span class="line">&#123;</span><br><span class="line">            <span class="keyword">return</span> os&lt;&lt;<span class="string">'('</span>&lt;&lt;<span class="built_in">real</span>(x)&lt;&lt;<span class="string">','</span>&lt;&lt;<span class="built_in">imag</span>(x)&lt;&lt;<span class="string">')'</span>&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </code>
 </pre>
 
-<h3 id="本题的思路">本题的思路</h3><p>初始时，每一个点各自属于一个集团，一旦这两个点的边权值为0，则这两个点属于同一个集团，利用靠左原则将点合并，另外此题里要<strong>统计每一个集团的个数</strong>（即每一个点相邻最近的点的个数），在合并的时候完成个数的统计，方法是在构造一个数组，每一个数组元素初始化的值即为1（自身），一旦两个点要合并时，将右边的boss的总和加到左边boss的个数上。后面的计算就比较简单了。</p>
-<h3 id="代码">代码</h3><pre class="prettyprint">
-<code class="language-cpp">
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXN <span class="number">100005</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> vers[MAXN];</span><br><span class="line"><span class="keyword">int</span> sum[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get_v</span><span class="params">(<span class="keyword">int</span> m)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(vers[m]!=m)</span><br><span class="line">	vers[m]=get_v(m);</span><br><span class="line">	<span class="keyword">return</span> vers[m];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_v</span><span class="params">(<span class="keyword">int</span> v,<span class="keyword">int</span> u)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> v1 = get_v(v);</span><br><span class="line">	<span class="keyword">int</span> v2 = get_v(u);</span><br><span class="line">	<span class="keyword">if</span>(v1!=v2)&#123;</span><br><span class="line">	vers[u] = v1;</span><br><span class="line">	sum[v1] = sum[v1] + sum[v2];<span class="comment">//统计每个联通块个数</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; MAXN ; i++)&#123;</span><br><span class="line">	vers[i] = i;</span><br><span class="line">	sum[i] = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t,n,i,j,u,v,w,s;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		init();</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">		<span class="keyword">for</span>(i = <span class="number">1</span>;i&lt;=n-<span class="number">1</span>;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;u,&amp;v,&amp;w);</span><br><span class="line">			<span class="keyword">if</span>(w==<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">			merge_v(u,v);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		s=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(i = <span class="number">1</span> ; i&lt;= n ;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			s=s^sum[get_v(i)];</span><br><span class="line">		&#125;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,s);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</code>
-</pre>
-
+<p>执行的结果仍然要是cout</p>
 
       
     </div>
@@ -306,16 +288,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/01/27/Hdoj-5612-DFS/">
-                    Hdoj-5612-DFS
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/01/07/hello-world/">
-                    Hello World
+                <a href="/2016/03/05/Hdoj-2844-多重部分和问题/">
+                    Hdoj-2844-多重部分和问题
                 </a>
             </div>
         
@@ -326,7 +302,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础的并查集问题"><span class="toc-number">1.</span> <span class="toc-text">基础的并查集问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题意描述"><span class="toc-number">1.1.</span> <span class="toc-text">题意描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一些思路"><span class="toc-number">1.2.</span> <span class="toc-text">一些思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于并查集"><span class="toc-number">1.3.</span> <span class="toc-text">关于并查集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#寻找所有同一集合的大Boss"><span class="toc-number">1.3.1.</span> <span class="toc-text">寻找所有同一集合的大Boss</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#合并"><span class="toc-number">1.3.2.</span> <span class="toc-text">合并</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本题的思路"><span class="toc-number">1.4.</span> <span class="toc-text">本题的思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.5.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#friend（友元）"><span class="toc-number">1.</span> <span class="toc-text">friend（友元）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#const成员函数"><span class="toc-number">2.</span> <span class="toc-text">const成员函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数传递_pass_by_value_OR_pass_by_reference(to_const)"><span class="toc-number">3.</span> <span class="toc-text">参数传递 pass by value OR pass by reference(to const)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#防卫式声明"><span class="toc-number">4.</span> <span class="toc-text">防卫式声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ostream"><span class="toc-number">5.</span> <span class="toc-text">ostream</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -390,7 +366,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/01/22/Hdoj-5606-Tree（并查集）/" data-title="Hdoj 5606 Tree（并查集）" data-url="http://yoursite.com/2016/01/22/Hdoj-5606-Tree（并查集）/"></div>
+    <div class="ds-thread" data-thread-key="2016/03/06/C-笔记整理-2-GeekBand/" data-title=" C++笔记整理 2 GeekBand " data-url="http://yoursite.com/2016/03/06/C-笔记整理-2-GeekBand/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -414,15 +390,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/01/27/Hdoj-5612-DFS/" title="上一篇: Hdoj-5612-DFS">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/01/07/hello-world/" title="下一篇: Hello World">
+            <a href="/2016/03/05/Hdoj-2844-多重部分和问题/" title="下一篇: Hdoj-2844-多重部分和问题">
                 <i class="fa fa-angle-right"></i>
             </a>
         
